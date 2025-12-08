@@ -1,5 +1,5 @@
 import streamlit as st
-import requests
+import os
 
 st.set_page_config(
     page_title="🧐 LA Crime Dashboard",
@@ -8,25 +8,23 @@ st.set_page_config(
 )
 
 st.write("🚓 Welcome to the multi-page LA Crime Intelligence Dashboard!")
-
 st.write("Use the sidebar on the left to navigate between pages.")
 
-#README from project file
+# --------------------------
+# LOAD README.md
+# --------------------------
+README_PATH = "README.md"
 
-import glob
-import os
-with open("README.md", "r") as f:
-    #st.markdown(f.read(), unsafe_allow_html=True)
-    readme_lines = f.readlines()
-    readme.buffer = []
-    resource_folder = [os.path.basename(x) for x in glob.glob("f'Resources/*")]
-for line in readme_lines:
-        if any(folder in line for folder in reasource_folder):
-            readme_buffer.append(line)
-            for image in resource_files:
-                 if image in line:
-                      st.markdown(''.jion9(readme_buffer[:-1]))
-                      st.image(f'Resources/{image}')
+if os.path.exists(README_PATH):
+    with open(README_PATH, "r", encoding="utf-8") as f:
+        readme_text = f.read()
+
+    st.markdown("---")
+    st.header("📘 Project README")
+    st.markdown(readme_text, unsafe_allow_html=False)
+else:
+    st.error("❌ README.md not found in project directory.")
+
 
 # Look too make README live link from github
 
