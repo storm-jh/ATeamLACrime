@@ -27,7 +27,7 @@ https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 | Ben        |          |
 | Storm      |          |
 | Thomas     |          |
-| Conor      |          |
+| Conor      | 1 Day to create basic and advanced visualisation in Tableau         |
 | Riaz       |          |
 
 ### 3. Personal Accountability
@@ -37,7 +37,7 @@ https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 | Ben        |          |
 | Storm      |          |
 | Thomas     |          |
-| Conor      |          |
+| Conor      | Checking Trello board, assigning and completing tasks         |
 | Riaz       |          |
 
 ### 4. Dealing With Distractions
@@ -47,7 +47,7 @@ https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 | Ben        |          |
 | Storm      |          |
 | Thomas     |          |
-| Conor      |          |
+| Conor      | Work focus mode on phone.         |
 | Riaz       |          |
 
 ### 5. Problem Solving
@@ -57,7 +57,7 @@ https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 | Ben        |          |
 | Storm      |          |
 | Thomas     |          |
-| Conor      |          |
+| Conor      | Returning to tutorials to progress with use of Tableau. Meetings with group to discuss and help solve issues         |
 | Riaz       |          |
 
 
@@ -78,5 +78,5 @@ https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 | Ben        |          |
 | Storm      |          |
 | Thomas     |          |
-| Conor      |          |
+| Conor      |   Trello       |
 | Riaz       |          |
