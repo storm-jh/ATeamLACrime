@@ -219,7 +219,7 @@ st.pyplot(fig7)
 # -------------------------
 st.subheader("🕵 Crime Count by Area")
 
-plot8 = df.groupby("AREA NAME").size().sort_values().reset_index(name="count")
+plot8 = df.groupby("AREA NAME").size().sort_values(ascending=False).reset_index(name="count")
 
 fig8, ax8 = plt.subplots(figsize=(12, 10))
 sns.barplot(data=plot8, x="count", y="AREA NAME", palette="dark:b_r", ax=ax8)
