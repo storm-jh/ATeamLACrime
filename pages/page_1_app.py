@@ -179,7 +179,7 @@ st.subheader("🔝 Top 10 Most Common Crimes")
 plot6 = (
     df.groupby("Crm Cd Desc")
     .size()
-    .sort_values(ascending=True)
+    .sort_values(ascending=False)
     .reset_index(name="count")
     .head(10)
 )
