@@ -16,6 +16,9 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 3. Install requirements: `pip install -r requirements.txt`
 4. Required to add "Crime_Data_from_2020_to_Present.csv" to data folder. Available from https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 
+## Data
+- Victim age shows a clear spike at 0, indicating missing or unrecorded data. These records were flagged as ‘Unknown’ and excluded from age-based distribution analysis, but retained in overall counts.
+
 ## Data Apps / Dashboards
 - Tableau
 - Streamlit
