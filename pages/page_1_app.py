@@ -103,6 +103,21 @@ with col2:
     sns.despine()
     st.pyplot(fig_box)
 
+st.sidebar.markdown("---")
+st.sidebar.markdown("### 🔗 Project Links")
+
+st.sidebar.markdown(
+    """
+    **GitHub Repo:**  
+    [👉 ATeam LA Crime Project](https://github.com/storm-jh/ATeamLACrime)
+
+    **LinkedIn:**  
+    [👉 Connect on LinkedIn](https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit)
+    """
+)
+
+
+
 
 # -------------------------
 # MONTH-WISE CRIME + BOXPLOT
