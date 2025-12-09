@@ -237,7 +237,7 @@ with col2:
 # -------------------------
 st.subheader("🕵 Crime Count by Area")
 
-plot8 = df.groupby("AREA NAME").size().sort_values().reset_index(name="count")
+plot8 = df.groupby("AREA NAME").size().sort_values(ascending=False).reset_index(name="count")
 
 col1, col2 = st.columns([3, 1])
 with col1:
