@@ -14,12 +14,11 @@ def load_data():
     df = pd.read_csv('pages/data/Crime_Data_from_2020_to_Present.csv')
     return df
 
-st.title("🧐 LA Crime Dashboard (2020–Present)")
+st.title("🧐 LA Crime Dashboard 2020–2025")
 df = load_data()
 
 st.success(f"Loaded **{df.shape[0]:,} rows** and **{df.shape[1]} columns**")
 
-# Convert month format (make consistent for filtering)
 df["occ_month"] = df["occ_month"].astype(str).str[:3].str.title()
 
 # --------------------------------
@@ -40,7 +39,6 @@ if "default_areas" not in st.session_state:
 
 st.sidebar.header("Filters")
 
-# YEAR FILTER
 year_filter = st.sidebar.multiselect(
     "Select Years",
     sorted(df["occ_year"].unique()),
@@ -48,7 +46,6 @@ year_filter = st.sidebar.multiselect(
     key="year_filter"
 )
 
-# MONTH FILTER
 month_filter = st.sidebar.multiselect(
     "Select Months",
     st.session_state.default_months,
@@ -56,7 +53,6 @@ month_filter = st.sidebar.multiselect(
     key="month_filter"
 )
 
-# DAY OF WEEK FILTER
 day_filter = st.sidebar.multiselect(
     "Select Days of Week",
     st.session_state.default_days,
@@ -64,7 +60,6 @@ day_filter = st.sidebar.multiselect(
     key="day_filter"
 )
 
-# AREA FILTER
 area_filter = st.sidebar.multiselect(
     "Select Areas",
     sorted(df["AREA NAME"].unique()),
@@ -72,12 +67,23 @@ area_filter = st.sidebar.multiselect(
     key="area_filter"
 )
 
-# Apply filters
 df = df[df["occ_year"].isin(year_filter)]
 df = df[df["AREA NAME"].isin(area_filter)]
 df = df[df["occ_month"].isin(month_filter)]
 df = df[df["occ_day"].isin(day_filter)]
 
+st.sidebar.markdown("---")
+st.sidebar.markdown("### 🔗 Project Links")
+
+st.sidebar.markdown(
+    """
+    **GitHub Repo:**  
+    [👉 ATeam LA Crime Project](https://github.com/storm-jh/ATeamLACrime)
+
+    **LinkedIn:**  
+    [👉 Connect on LinkedIn](https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit)
+    """
+)
 
 # -------------------------
 # YEARLY CRIME TREND + BOXPLOT
@@ -98,25 +104,33 @@ with col1:
 
 with col2:
     fig_box, ax_box = plt.subplots(figsize=(4, 6))
-    sns.boxplot(y=plot1["count"], ax=ax_box)
+    sns.boxplot(y=plot1["count"], ax=ax_box, width=0.3)
+    sns.stripplot(y=plot1["count"], ax=ax_box, color="black", alpha=0.4, jitter=True, size=5)
     ax_box.set_title("Distribution")
     sns.despine()
     st.pyplot(fig_box)
 
-st.sidebar.markdown("---")
-st.sidebar.markdown("### 🔗 Project Links")
+# -------------------------
+# INSIGHTS: YEARLY CRIME TRENDS
+# -------------------------
+st.subheader("🧠 Insights for Yearly Crime Trends")
 
-st.sidebar.markdown(
-    """
-    **GitHub Repo:**  
-    [👉 ATeam LA Crime Project](https://github.com/storm-jh/ATeamLACrime)
+year_counts = plot1.copy()
 
-    **LinkedIn:**  
-    [👉 Connect on LinkedIn](https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit)
-    """
-)
+highest_year = int(year_counts.loc[year_counts["count"].idxmax(), "occ_year"])
+highest_value = int(year_counts["count"].max())
+lowest_year = int(year_counts.loc[year_counts["count"].idxmin(), "occ_year"])
+lowest_value = int(year_counts["count"].min())
+avg_yearly = year_counts["count"].mean()
 
+insight_text_year = f"""
 
+- **Highest-crime year:** `{highest_year}` with **{highest_value:,} incidents**
+- **Lowest-crime year:** `{lowest_year}` with **{lowest_value:,} incidents**
+- **Average yearly crime:** `{avg_yearly:,.0f}` incidents per year
+"""
+
+st.markdown(insight_text_year)
 
 
 # -------------------------
@@ -145,10 +159,32 @@ with col1:
 
 with col2:
     fig_box2, ax_box2 = plt.subplots(figsize=(4, 6))
-    sns.boxplot(y=plot2["count"], ax=ax_box2)
+    sns.boxplot(y=plot2["count"], ax=ax_box2, width=0.3)
+    sns.stripplot(y=plot2["count"], ax=ax_box2, color="black", alpha=0.4, jitter=True, size=5)
     ax_box2.set_title("Distribution")
     sns.despine()
     st.pyplot(fig_box2)
+
+# -------------------------
+# INSIGHTS: MONTH-WISE CRIME TRENDS
+# -------------------------
+st.subheader("🧠 Insights for Monthly Crime Trends")
+
+month_counts = plot2.copy()
+
+highest_month = month_counts.loc[month_counts["count"].idxmax(), "occ_month"]
+highest_value = int(month_counts["count"].max())
+lowest_month = month_counts.loc[month_counts["count"].idxmin(), "occ_month"]
+lowest_value = int(month_counts["count"].min())
+avg_monthly = month_counts["count"].mean()
+
+insight_text_month = f"""
+- **Highest-crime month:** `{highest_month}` with **{highest_value:,} incidents**
+- **Lowest-crime month:** `{lowest_month}` with **{lowest_value:,} incidents**
+- **Average monthly crime:** `{avg_monthly:,.0f}` incidents per month
+"""
+
+st.markdown(insight_text_month)
 
 
 # -------------------------
@@ -176,10 +212,32 @@ with col1:
 
 with col2:
     fig_box3, ax_box3 = plt.subplots(figsize=(4, 6))
-    sns.boxplot(y=plot3["count"], ax=ax_box3)
+    sns.boxplot(y=plot3["count"], ax=ax_box3, width=0.3)
+    sns.stripplot(y=plot3["count"], ax=ax_box3, color="black", alpha=0.4, jitter=True, size=5)
     ax_box3.set_title("Distribution")
     sns.despine()
     st.pyplot(fig_box3)
+
+# -------------------------
+# INSIGHTS: DAY-OF-WEEK CRIME TRENDS
+# -------------------------
+st.subheader("🧠 Insights for Crime by Day of Week")
+
+day_counts = plot3.copy()
+
+highest_day = day_counts.loc[day_counts["count"].idxmax(), "occ_day"]
+highest_value = int(day_counts["count"].max())
+lowest_day = day_counts.loc[day_counts["count"].idxmin(), "occ_day"]
+lowest_value = int(day_counts["count"].min())
+avg_day = day_counts["count"].mean()
+
+insight_text_day = f"""
+- **Busiest crime day:** `{highest_day}` with **{highest_value:,} incidents**
+- **Quietest day:** `{lowest_day}` with **{lowest_value:,} incidents**
+- **Average weekday crime:** `{avg_day:,.0f}` incidents
+"""
+
+st.markdown(insight_text_day)
 
 
 # -------------------------
@@ -210,10 +268,30 @@ with col1:
 
 with col2:
     fig_box5, ax_box5 = plt.subplots(figsize=(4, 6))
-    sns.boxplot(y=plot5["count"], ax=ax_box5)
+    sns.boxplot(y=plot5["count"], ax=ax_box5, width=0.3)
+    sns.stripplot(y=plot5["count"], ax=ax_box5, color="black", alpha=0.4, jitter=True, size=5)
     ax_box5.set_title("Distribution")
     sns.despine()
     st.pyplot(fig_box5)
+
+# -------------------------
+# INSIGHTS: REPORTING DELAY
+# -------------------------
+st.subheader("🧠 Insights for Crime Reporting Delays")
+
+delay_counts = plot5.copy()
+
+highest_delay = delay_counts.loc[delay_counts["count"].idxmax(), "rep_lag"]
+highest_value = int(delay_counts["count"].max())
+lowest_delay = delay_counts.loc[delay_counts["count"].idxmin(), "rep_lag"]
+lowest_value = int(delay_counts["count"].min())
+
+insight_text_delay = f"""
+- **Most common reporting delay:** `{highest_delay}` with **{highest_value:,} reports**
+- **Least common delay category:** `{lowest_delay}` with **{lowest_value:,} reports**
+"""
+
+st.markdown(insight_text_delay)
 
 
 # -------------------------
@@ -224,7 +302,7 @@ st.subheader("🔝 Top 10 Most Common Crimes")
 plot6 = (
     df.groupby("Crm Cd Desc")
     .size()
-    .sort_values(ascending=True)
+    .sort_values(ascending=False)
     .reset_index(name="count")
     .head(10)
 )
@@ -241,18 +319,23 @@ with col1:
 
 with col2:
     fig_box6, ax_box6 = plt.subplots(figsize=(4, 6))
-    sns.boxplot(y=plot6["count"], ax=ax_box6)
+    sns.boxplot(y=plot6["count"], ax=ax_box6, width=0.3)
+    sns.stripplot(y=plot6["count"], ax=ax_box6, color="black", alpha=0.4, jitter=True, size=5)
     ax_box6.set_title("Distribution")
     sns.despine()
     st.pyplot(fig_box6)
-
 
 # -------------------------
 # AREA-WISE CRIME + BOXPLOT
 # -------------------------
 st.subheader("🕵 Crime Count by Area")
 
-plot8 = df.groupby("AREA NAME").size().sort_values().reset_index(name="count")
+plot8 = (
+    df.groupby("AREA NAME")
+    .size()
+    .sort_values(ascending=False)
+    .reset_index(name="count")
+)
 
 col1, col2 = st.columns([3, 1])
 with col1:
@@ -266,15 +349,40 @@ with col1:
 
 with col2:
     fig_box8, ax_box8 = plt.subplots(figsize=(4, 6))
-    sns.boxplot(y=plot8["count"], ax=ax_box8)
+    sns.boxplot(y=plot8["count"], ax=ax_box8, width=0.3)
+    sns.stripplot(y=plot8["count"], ax=ax_box8, color="black", alpha=0.4, jitter=True, size=5)
     ax_box8.set_title("Distribution")
     sns.despine()
     st.pyplot(fig_box8)
 
+# -------------------------
+# INSIGHTS: CRIME CATEGORIES + AREAS
+# -------------------------
+st.subheader("🧠 Insights for Crime Categories and Areas")
+
+top_category = plot6.iloc[0]["Crm Cd Desc"]
+top_category_value = int(plot6.iloc[0]["count"])
+low_category = plot6.iloc[-1]["Crm Cd Desc"]
+low_category_value = int(plot6.iloc[-1]["count"])
+top_area = plot8.iloc[0]["AREA NAME"]
+top_area_value = int(plot8.iloc[0]["count"])
+low_area = plot8.iloc[-1]["AREA NAME"]
+low_area_value = int(plot8.iloc[-1]["count"])
+
+combined_insights = f"""
+- **Most common crime type:** `{top_category}` with **{top_category_value:,} incidents**  
+- **Least common among the top 10:** `{low_category}` with **{low_category_value:,} incidents**
+- **Area with the highest crime volume:** `{top_area}` with **{top_area_value:,} incidents**  
+- **Area with the lowest crime volume:** `{low_area}` with **{low_area_value:,} incidents**
+"""
+
+st.markdown(combined_insights)
+
+
+
 
 # -------------------------
 # CRIME TREND BY AREA PER YEAR
-# ⚠️ Boxplot NOT meaningful → multiseries trend (skip)
 # -------------------------
 st.subheader("📊 Crime Trend Over Years by Area")
 
@@ -294,3 +402,126 @@ plt.setp(ax9.get_xticklabels(), rotation=45)
 ax9.set_title("Crime Trend by Area & Year")
 sns.despine()
 st.pyplot(fig9)
+
+# -------------------------
+# INSIGHTS: CRIME TREND BY AREA & YEAR
+# -------------------------
+st.subheader("🧠 Insights for Crime Trends Across Areas and Years")
+
+area_totals = plot9.groupby("AREA NAME")["count"].sum()
+top_area = area_totals.idxmax()
+top_area_value = int(area_totals.max())
+low_area = area_totals.idxmin()
+low_area_value = int(area_totals.min())
+year_totals = plot9.groupby("occ_year")["count"].sum()
+top_year = int(year_totals.idxmax())
+top_year_value = int(year_totals.max())
+low_year = int(year_totals.idxmin())
+low_year_value = int(year_totals.min())
+
+insight_text_area_year = f"""
+- **Area with the highest crime overall:** `{top_area}` with **{top_area_value:,} incidents**
+- **Area with the lowest crime overall:** `{low_area}` with **{low_area_value:,} incidents**
+- **Year with the highest total crime:** `{top_year}` with **{top_year_value:,} incidents**
+- **Year with the lowest total crime:** `{low_year}` with **{low_year_value:,} incidents**
+"""
+
+st.markdown(insight_text_area_year)
+
+
+
+# -------------------------
+# BUILD DAILY CRIME DATAFRAME
+# -------------------------
+df["DATE OCC"] = pd.to_datetime(df["DATE OCC"])
+df["day"] = df["DATE OCC"].dt.day
+
+daily_area = (
+    df.groupby(["day", "AREA NAME"])
+      .size()
+      .reset_index(name="count")
+)
+
+# -------------------------
+# DAILY CRIME TREND BY AREA
+# -------------------------
+st.subheader("📈 Daily Crime Trend by Area")
+
+fig_daily2, ax_daily2 = plt.subplots(figsize=(16, 7))
+
+sns.lineplot(
+    data=daily_area,
+    x="day",
+    y="count",
+    hue="AREA NAME",
+    marker="o",
+    ax=ax_daily2,
+    palette="tab20"
+)
+
+ax_daily2.set_title("Daily Crime Trend Across Areas")
+ax_daily2.set_xlabel("Day of Month")
+ax_daily2.set_ylabel("Crime Count")
+ax_daily2.set_xticks(range(1, 32))
+sns.despine()
+
+st.pyplot(fig_daily2)
+
+
+# -------------------------
+# HEATMAP: DAILY CRIME LEVELS BY AREA
+# -------------------------
+st.subheader("🔥 Daily Crime Heatmap by Area")
+
+df["DATE OCC"] = pd.to_datetime(df["DATE OCC"])
+
+df["day"] = df["DATE OCC"].dt.day
+
+heatmap_data = df.pivot_table(
+    index="AREA NAME",
+    columns="day",
+    values="DR_NO",
+    aggfunc="count",
+    fill_value=0
+)
+
+fig_hm, ax_hm = plt.subplots(figsize=(18, 10))
+
+sns.heatmap(
+    heatmap_data,
+    cmap="Reds",
+    linewidths=0.4,
+    linecolor="gray",
+    cbar_kws={'label': 'Crime Count'},
+    ax=ax_hm
+)
+
+ax_hm.set_title("Daily Crime Heatmap by Area", fontsize=16)
+ax_hm.set_xlabel("Day of Month")
+ax_hm.set_ylabel("Area")
+
+st.pyplot(fig_hm)
+
+# -------------------------
+# LOGIC FOR INSIGHTS
+# -------------------------
+st.subheader("🧠 Insights for Daily Crime Trends")
+# Total crime per area
+area_totals = daily_area.groupby("AREA NAME")["count"].sum()
+top_area = area_totals.idxmax()
+top_area_value = int(area_totals.max())
+day_totals = daily_area.groupby("day")["count"].sum()
+top_day = int(day_totals.idxmax())
+top_day_value = int(day_totals.max())
+avg_daily = day_totals.mean()
+spikes = day_totals[day_totals > avg_daily * 1.5]
+
+insight_text = f"""
+- **Most active area:** `{top_area}` with **{top_area_value} incidents**
+- **Highest-crime day:** `{top_day}` with **{top_day_value} incidents**
+- **Average daily crime:** {avg_daily:.1f}
+"""
+
+st.markdown(insight_text)
+
+
