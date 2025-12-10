@@ -185,7 +185,7 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Ben        |          |
 | Storm      |          |
 | Thomas     |          |
-| Conor      |          |
+| Conor      | Checking over other members code for inconsistencies         |
 | Riaz       |          |
 
 ### 7. Project Management Methodology Adoption:
