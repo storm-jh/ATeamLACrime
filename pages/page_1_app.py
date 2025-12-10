@@ -386,14 +386,14 @@ st.markdown(combined_insights)
 # -------------------------
 st.subheader("📊 Crime Trend Over Years by Area")
 
-plot9 = df.groupby("occ_year")["AREA NAME"].value_counts().reset_index(name="count")
+plot9 = df.groupby("AREA NAME")["occ_year"].value_counts().reset_index(name="count")
 
 fig9, ax9 = plt.subplots(figsize=(16, 7))
 sns.lineplot(
     data=plot9,
-    x="AREA NAME",
+    x="occ_year",
     y="count",
-    hue="occ_year",
+    hue="AREA NAME",
     marker="o",
     palette="tab10",
     ax=ax9
