@@ -7,14 +7,69 @@ st.set_page_config(page_title="🧐 LA Crime Dashboard", layout="wide", page_ico
 sns.set_theme(style="whitegrid")
 
 # -------------------------
-# LOAD DATA
+# LOAD & CLEAN DATA
 # -------------------------
 @st.cache_data
 def load_data():
     df = pd.read_csv('pages/data/Crime_Data_from_2020_to_Present.csv')
+
+    # -----------------------------------------------------
+    # DATA CLEANING PIPELINE
+    # -----------------------------------------------------
+
+    # 1. Drop duplicate unique crime report numbers (safe)
+    df = df.drop_duplicates(subset=["DR_NO"])
+
+    # 2. Fix and validate date columns
+    df["DATE OCC"] = pd.to_datetime(df["DATE OCC"], errors="coerce")
+    df["Date Rptd"] = pd.to_datetime(df["Date Rptd"], errors="coerce")
+
+    # Remove rows with invalid or missing dates
+    df = df.dropna(subset=["DATE OCC", "Date Rptd"])
+
+    # Create reporting delay safely
+    df["delay_reporting"] = (df["Date Rptd"] - df["DATE OCC"]).dt.days
+
+    # 3. Standardize month values
+    df["occ_month"] = df["occ_month"].astype(str).str[:3].str.title()
+
+    # Enforce proper month ordering
+    df["occ_month"] = pd.Categorical(
+        df["occ_month"],
+        categories=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        ordered=True
+    )
+
+    # 4. Standardize days of week
+    df["occ_day"] = df["occ_day"].astype(str).str.title()
+
+    df["occ_day"] = pd.Categorical(
+        df["occ_day"],
+        categories=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+        ordered=True
+    )
+
+    # 5. Ensure numeric fields are valid
+    numeric_cols = ["Vict Age", "Crm Cd", "AREA", "Rpt Dist No"]
+    for col in numeric_cols:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    # 6. Remove rows with clearly invalid values
+    df = df[df["Vict Age"] >= 0]
+    df = df[df["Crm Cd"] > 0]
+
+    # 7. Clean categorical text fields
+    text_cols = ["Crm Cd Desc", "AREA NAME"]
+    for col in text_cols:
+        df[col] = df[col].astype(str).str.strip().str.title()
+
     return df
 
+# -------------------------
+# LOAD ONCE AND USE CLEAN DATA
+# -------------------------
 st.title("🧐 LA Crime Dashboard 2020–2025")
+
 df = load_data()
 
 st.success(f"Loaded **{df.shape[0]:,} rows** and **{df.shape[1]} columns**")
@@ -463,9 +518,19 @@ ax_daily2.set_title("Daily Crime Trend Across Areas")
 ax_daily2.set_xlabel("Day of Month")
 ax_daily2.set_ylabel("Crime Count")
 ax_daily2.set_xticks(range(1, 32))
+
+# MOVE LEGEND OUTSIDE THE PLOT
+ax_daily2.legend(
+    title="Area",
+    bbox_to_anchor=(1.02, 1),
+    loc="upper left",
+    borderaxespad=0,
+)
+
 sns.despine()
 
 st.pyplot(fig_daily2)
+
 
 
 # -------------------------

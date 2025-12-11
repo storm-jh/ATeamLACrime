@@ -26,7 +26,7 @@ else:
     st.error("❌ README.md not found in project directory.")
 
 
-# Look too make README live link from github
+# Look too make README live from github
 
 
 
