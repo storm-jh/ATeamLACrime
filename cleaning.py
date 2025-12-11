@@ -3,9 +3,9 @@ import pandas as pd
 df = pd.read_csv(r'ATeamLACrime\Crime_Data_from_2020_to_Present.csv')
 
 ## Just checking stuff
-print(df.info)
-print(df.dtypes)
-print(df.columns)
+#print(df.info)
+#print(df.dtypes)
+#print(df.columns)
 
 
 ### Setting date and time columns to datetime
@@ -20,6 +20,8 @@ df1["Vict Age"] = df1["Vict Age"].clip(lower=0)
 
 ### Removing 2000 or so results with 0 for both longtidue and lattitude
 df1 = df1[(df1["LAT"] != 0) | (df["LON"] != 0)]
+
+
 
 ### Checking it all worked
 #print(df1.dtypes)

@@ -39,7 +39,7 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | Using new software to explore and visualise data         |
 | Thomas     | Putting new skills in practice         |
 | Conor      | Focussing just on the task at hand to avoid overwhelm. |
 | Riaz       |          |
@@ -50,7 +50,7 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | clean and Explore data and look for interesting insights         |
 | Thomas     | Create streamlit app in VSC         |
 | Conor      | 1 Day to create basic and advanced visualisation in Tableau         |
 | Riaz       |          |
@@ -60,7 +60,7 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | Keeping track of trello         |
 | Thomas     | Streamlit         |
 | Conor      | Checking Trello board, assigning and completing tasks         |
 | Riaz       |          |
@@ -70,7 +70,7 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | Working in silence, taking breaksa         |
 | Thomas     | Earplugs         |
 | Conor      | Work focus mode on phone.         |
 | Riaz       |          |
@@ -80,7 +80,7 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | googling lots of tableu stuff         |
 | Thomas     | Watching tutorials and researching other projects for inspiration         |
 | Conor      | Returning to tutorials to progress with use of Tableau. Meetings with group to discuss and help solve issues         |
 | Riaz       |          |
@@ -91,7 +91,7 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | checking cleaning code is working and keeping it so that updates can be done without intefering with peoples dashboards         |
 | Thomas     |  Running code after each change to maintain good working order        |
 | Conor      |          |
 | Riaz       |          |
@@ -101,7 +101,7 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      |  trello        |
 | Thomas     |   Trello       |
 | Conor      |   Trello       |
 | Riaz       |          |
@@ -109,7 +109,7 @@ Explore the Crime Dataset to aid in making decision on resource allocation of LA
 ## Problems
 
 Ben:
-Storm:
+Storm: Was having git issues for a while, the CSV was huge so working out how to deal with that as a team took a little while, I'm bad at remebering and updating the trello.
 Thomas:
 - I had a big problem commiting to the repo. The csv file was over the 100mb size limit for git hub. I put the csv into .gitignor but still had to use the termial to clear cashed memory as it was still causing a problem. git filter-branch --force --index-filter ^
 "git rm --cached --ignore-unmatch pages/data/Crime_Data_from_2020_to_Present.csv" ^
