@@ -7,6 +7,7 @@ Group project involving data analysis of crime data from Los Angeles from years 
 https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 https://dataconverter.io/convert/parquet-to-csv
 https://pixabay.com/sound-effects/search/car/
+Cleaned csv - for opening tableu files https://drive.google.com/file/d/1lQ7fSk-7fNflc406FWgQuOuFU1CvO5Gj/view?usp=drive_link
 
 ## Business Requirements
 Explore the Crime Dataset to aid in making decision on resource allocation of LAPD, discover trends in the data, and make the LAPD more efficient in responding to crime.
