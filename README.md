@@ -125,6 +125,29 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 - Stolen Vehicles make up the most frequently reported crimes (115,190), ahead of Battery - Simple Assault (74,839)
 - Rates of shoplifting are increasing steadily over time. 
 
+## Business Requirements
+Explore the Crime Dataset to aid in making decision on resource allocation of LAPD, discover trends in the data, and make the LAPD more efficient in responding to crime.
+
+## Installation / Setup
+1. Clone the repo
+2. Create a virtual environment
+3. Install requirements: `pip install -r requirements.txt`
+4. Required to add "Crime_Data_from_2020_to_Present.csv" to data folder. Available from https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
+
+## Data
+- Victim age shows a clear spike at 0, indicating missing or unrecorded data. These records were flagged as ‘Unknown’ and excluded from age-based distribution analysis, but retained in overall counts.
+
+## Data Apps / Dashboards
+- Tableau
+- Streamlit
+
+## Team Members
+- Ben Brown
+- Thomas Overment
+- Storm GH
+- Conor O'Brien
+- Riaz Unar
+
 ## Resilience Behaviours
 
 ### 1. Solution-Oriented Mindset
