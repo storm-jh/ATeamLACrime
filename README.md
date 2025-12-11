@@ -1,8 +1,7 @@
 # A Team LA Crime 2020 to 2025
-Group project
 
 ## Overview
-Group project involving data analysis of crime data from Los Angeles from years 2020 to 2025, consisting of ETL pipeline and interactive visualisations. 
+Group project involving data analysis of crime data from Los Angeles from years 2020 to 2025, consisting of python ETL pipeline and interactive visualisations using Tableau and Streamlit. 
 
 ## Resources
 https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
@@ -205,12 +204,13 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 Ben:
 Storm:
 Thomas:
-- I had a big problem commiting to the repo. The csv file was over the 100mb size limit for git hub. I put the csv into .gitignor but still had to use the termial to clear cashed memory as it was still causing a problem. git filter-branch --force --index-filter ^
+- I had a big problem commiting to the repo. The csv file was over the 100mb size limit for git hub. I put the csv into .gitignore but still had to use the termial to clear cached memory as it was still causing a problem. git filter-branch --force --index-filter ^
 "git rm --cached --ignore-unmatch pages/data/Crime_Data_from_2020_to_Present.csv" ^
 --prune-empty --tag-name-filter cat -- --all (This removed all csv files in the memory.)
 - I tried to have a reset button for the filters in the side bar but had some problems with the loading order.
 - I tried to have an onclick sound play in the sidebar but Streamlit dosen't allow this.
 
 Conor:
+-  I had issue with merging branches in VS Code to the main branch in git hub. I spent some time watching videos, consolidating learning points and brought the issue to data coach where it was finally resolved.
 Riaz:
 
