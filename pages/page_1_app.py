@@ -132,11 +132,14 @@ st.sidebar.markdown("### 🔗 Project Links")
 
 st.sidebar.markdown(
     """
-    **GitHub Repo:**  
-    [👉 ATeam LA Crime Project](https://github.com/storm-jh/ATeamLACrime)
-    📊 [PowerPoint Presentation]()
+    **Project Resources:**  
+
+    🔗 [GitHub Repository](https://github.com/storm-jh/ATeamLACrime)  
+    📊 [PowerPoint Presentation](https://github.com/storm-jh/ATeamLACrime/blob/main/presentation/crime.pptx)  
     """
 )
+
+
 
 # -------------------------
 # YEARLY CRIME TREND + BOXPLOT
