@@ -6,125 +6,8 @@ Group project involving data analysis of crime data from Los Angeles from years 
 ## Resources
 https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 https://dataconverter.io/convert/parquet-to-csv
-https://pixabay.com/sound-effects/search/car/
-Cleaned csv - for opening tableu files https://drive.google.com/file/d/1lQ7fSk-7fNflc406FWgQuOuFU1CvO5Gj/view?usp=drive_link
-
-## Business Requirements
-Explore the Crime Dataset to aid in making decision on resource allocation of LAPD, discover trends in the data, and make the LAPD more efficient in responding to crime.
-
-## Installation / Setup
-1. Clone the repo
-2. Create a virtual environment
-3. Install requirements: `pip install -r requirements.txt`
-4. Required to add "Crime_Data_from_2020_to_Present.csv" to data folder. Available from https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
-
-## Data
-- Data consists of 1,004,991 rows, with each row representing one instance of a reported crime and 28 columns, as follows:
-
-DR_NO:
-Unique LAPD incident number used to identify each crime report.
-
-Date Rptd:
-The date the crime was reported to the police.
-
-DATE OCC:
-The date the crime occurred.
-
-TIME OCC:
-Time of occurrence in 24-hour format.
-
-AREA:
-Numerical code for the LAPD geographic division where the incident occurred.
-
-AREA NAME:
-Name of the LAPD division (for example, N Hollywood, Central, Pacific).
-
-Rpt Dist No:
-Reporting district number, representing a smaller neighborhood unit within an LAPD area.
-
-Part 1-2:
-Crime classification category.
-Part I includes serious crimes such as homicide, robbery, burglary, and aggravated assault.
-Part II includes less severe offenses such as fraud, vandalism, and simple assault.
-
-Crm Cd:
-Numeric code identifying the primary crime.
-
-Crm Cd Desc:
-Description of the primary crime type (for example, Theft of Identity, Burglary, Simple Assault).
-
-Mocodes:
-Method of Operation codes that describe how the crime was committed.
-
-Vict Age:
-Age of the victim.
-
-Vict Sex:
-Sex of the victim (Male, Female, Unknown).
-
-Vict Descent:
-Victim’s descent or ethnic background (for example, Hispanic/Latin/Mexican, White, Black, Asian).
-
-Premis Cd:
-Numeric code for the type of location where the crime occurred.
-
-Premis Desc:
-Description of the premise or location type (for example, Sidewalk, Single Family Dwelling).
-
-Weapon Used Cd:
-Numeric code for the weapon used, if any.
-
-Weapon Desc:
-Description of the weapon used (for example, Knife, Handgun, Unknown).
-
-Status:
-Case status code.
-
-Status Desc:
-Full description of the case status (for example, Invest Cont, Adult Arrest, Juvenile Arrest).
-
-Crm Cd 1:
-Additional crime code associated with the incident (if applicable). Often the same as Crm Cd for single-offense cases.
-
-LOCATION:
-Address or block description where the incident occurred.
-
-LAT:
-Latitude coordinate for the location.
-
-LON:
-Longitude coordinate for the location.
-
-occ_year:
-Year extracted from DATE OCC.
-
-occ_month:
-Month extracted from DATE OCC.
-
-occ_date:
-Day of the month extracted from DATE OCC.
-
-occ_day:
-Day of the week of the occurrence date (for example, Mon, Tue, Sat).
-
-- Victim age shows a clear spike at 0, indicating missing or unrecorded data. These records were flagged as ‘Unknown’ and excluded from age-based distribution analysis, but retained in overall counts.
-
-## Data Apps / Dashboards
-- Tableau
-- Streamlit
-
-## Team Members
-- Ben Brown
-- Thomas Overment
-- Storm GH
-- Conor O'Brien
-- Riaz Unar
-
-## Conclusions
-- January is the month with the highest total crime count (92,701) and December is the lowest (78,226)
-- Friday is the day with the highest total crime count (153,676) and Tuesday is the lowest (138,151)
-- Stolen Vehicles make up the most frequently reported crimes (115,190), ahead of Battery - Simple Assault (74,839)
-- Rates of shoplifting are increasing steadily over time. 
+https://pixabay.com/sound-effects/search/car/  
+Cleaned csv - for opening tableau files https://drive.google.com/file/d/1lQ7fSk-7fNflc406FWgQuOuFU1CvO5Gj/view?usp=drive_link
 
 ## Business Requirements
 Explore the Crime Dataset to aid in making decision on resource allocation of LAPD, discover trends in the data, and make the LAPD more efficient in responding to crime.
@@ -291,7 +174,7 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      | googling lots of tableu stuff         |
+| Storm      | googling lots of tableau stuff         |
 | Thomas     | Watching tutorials and researching other projects for inspiration         |
 | Conor      | Returning to tutorials to progress with use of Tableau. Meetings with group to discuss and help solve issues         |
 | Riaz       |          |
