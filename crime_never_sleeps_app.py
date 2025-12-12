@@ -2,7 +2,7 @@ import streamlit as st
 import os
 
 st.set_page_config(
-    page_title="🧐 LA Crime Dashboard",
+    page_title="🧐 LA Crime Dashboard!",
     page_icon=":monocle:",
     layout="wide"
 )
