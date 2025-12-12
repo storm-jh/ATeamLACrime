@@ -142,7 +142,7 @@ st.sidebar.markdown(
 
 
 # -------------------------
-# YEARLY CRIME TREND + BOXPLOT
+# YEARLY CRIME TREND AND BOXPLOT 
 # -------------------------
 st.subheader("📅 Yearly Crime Distribution")
 
