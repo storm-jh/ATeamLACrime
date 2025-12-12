@@ -222,7 +222,7 @@ with col2:
     st.pyplot(fig_box2)
 
 # -------------------------
-# INSIGHTS: MONTH-WISE CRIME TRENDS
+# INSIGHTS MONTH-WISE CRIME TRENDS
 # -------------------------
 st.subheader("🧠 Insights for Monthly Crime Trends")
 
