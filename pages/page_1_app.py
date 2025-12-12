@@ -134,6 +134,7 @@ st.sidebar.markdown(
     """
     **GitHub Repo:**  
     [👉 ATeam LA Crime Project](https://github.com/storm-jh/ATeamLACrime)
+    📊 [PowerPoint Presentation]()
     """
 )
 
