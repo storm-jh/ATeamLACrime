@@ -200,16 +200,18 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Conor      |   Trello       |
 | Riaz       |          |
 
-## Problems
-
-Ben:
-Storm: Was having git issues for a while, the CSV was huge so working out how to deal with that as a team took a little while, I'm bad at remebering and updating the trello.
-Thomas:
+## Problems/Reflections
+### Group
+- We would have benefitted from allocating more time to practice our presentation to ensure a smooth delivery and better coordination between group members
+### Storm 
+- Was having git issues for a while, the CSV was huge so working out how to deal with that as a team took a little while, I'm bad at remebering and updating the trello.
+### Thomas
 - I had a big problem commiting to the repo. The csv file was over the 100mb size limit for git hub. I put the csv into .gitignore but still had to use the termial to clear cached memory as it was still causing a problem. git filter-branch --force --index-filter ^
 "git rm --cached --ignore-unmatch pages/data/Crime_Data_from_2020_to_Present.csv" ^
 --prune-empty --tag-name-filter cat -- --all (This removed all csv files in the memory.)
 - I tried to have a reset button for the filters in the side bar but had some problems with the loading order.
 - I tried to have an onclick sound play in the sidebar but Streamlit dosen't allow this.
-
-Conor:
+### Conor
 -  I had issue with merging branches in VS Code to the main branch in git hub. I spent some time watching videos, consolidating learning points and brought the issue to data coach where it was finally resolved.
+### Riaz
+### Ben
