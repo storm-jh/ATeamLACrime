@@ -6,7 +6,8 @@ Group project involving data analysis of crime data from Los Angeles from years 
 ## Resources
 https://www.kaggle.com/datasets/utkarsh1093/crime-data-from-2020-to-nov2025/data
 https://dataconverter.io/convert/parquet-to-csv
-https://pixabay.com/sound-effects/search/car/
+https://pixabay.com/sound-effects/search/car/  
+Cleaned csv - for opening tableau files https://drive.google.com/file/d/1lQ7fSk-7fNflc406FWgQuOuFU1CvO5Gj/view?usp=drive_link
 
 ## Business Requirements
 Explore the Crime Dataset to aid in making decision on resource allocation of LAPD, discover trends in the data, and make the LAPD more efficient in responding to crime.
@@ -132,7 +133,7 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | Using new software to explore and visualise data         |
 | Thomas     | Putting new skills in practice         |
 | Conor      | Focussing just on the task at hand to avoid overwhelm. |
 | Riaz       |          |
@@ -143,7 +144,7 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | clean and Explore data and look for interesting insights         |
 | Thomas     | Create streamlit app in VSC         |
 | Conor      | 1 Day to create basic and advanced visualisation in Tableau         |
 | Riaz       |          |
@@ -153,7 +154,7 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | Keeping track of trello         |
 | Thomas     | Streamlit         |
 | Conor      | Checking Trello board, assigning and completing tasks         |
 | Riaz       |          |
@@ -163,7 +164,7 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | Working in silence, taking breaksa         |
 | Thomas     | Earplugs         |
 | Conor      | Work focus mode on phone.         |
 | Riaz       |          |
@@ -173,7 +174,7 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      | googling lots of tableau stuff         |
 | Thomas     | Watching tutorials and researching other projects for inspiration         |
 | Conor      | Returning to tutorials to progress with use of Tableau. Meetings with group to discuss and help solve issues         |
 | Riaz       |          |
@@ -185,8 +186,8 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 |------------|----------|
 | Ben        |          |
 | Storm      |          |
-| Thomas     |   Running code after each change to maintain good working order          |
-| Conor      | Checking over other members code for inconsistencies         |
+| Thomas     |  Running code after each change to maintain good working order        |
+| Conor      |          |
 | Riaz       |          |
 
 ### 7. Project Management Methodology Adoption:
@@ -194,23 +195,23 @@ Day of the week of the occurrence date (for example, Mon, Tue, Sat).
 | Participant | Measure |
 |------------|----------|
 | Ben        |          |
-| Storm      |          |
+| Storm      |  trello        |
 | Thomas     |   Trello       |
 | Conor      |   Trello       |
 | Riaz       |          |
 
-## Problems
-
-Ben:
-Storm:
-Thomas:
+## Problems/Reflections
+### Group
+- We would have benefitted from allocating more time to practice our presentation to ensure a smooth delivery and better coordination between group members
+### Storm 
+- Was having git issues for a while, the CSV was huge so working out how to deal with that as a team took a little while, I'm bad at remebering and updating the trello.
+### Thomas
 - I had a big problem commiting to the repo. The csv file was over the 100mb size limit for git hub. I put the csv into .gitignore but still had to use the termial to clear cached memory as it was still causing a problem. git filter-branch --force --index-filter ^
 "git rm --cached --ignore-unmatch pages/data/Crime_Data_from_2020_to_Present.csv" ^
 --prune-empty --tag-name-filter cat -- --all (This removed all csv files in the memory.)
 - I tried to have a reset button for the filters in the side bar but had some problems with the loading order.
 - I tried to have an onclick sound play in the sidebar but Streamlit dosen't allow this.
-
-Conor:
+### Conor
 -  I had issue with merging branches in VS Code to the main branch in git hub. I spent some time watching videos, consolidating learning points and brought the issue to data coach where it was finally resolved.
-Riaz:
-
+### Riaz
+### Ben

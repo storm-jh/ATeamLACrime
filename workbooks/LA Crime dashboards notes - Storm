@@ -1,0 +1,42 @@
+Tableu will need to pointed towards crimedatacleaned.csv
+
+https://drive.google.com/file/d/1lQ7fSk-7fNflc406FWgQuOuFU1CvO5Gj/view?usp=drive_link
+
+## slide 1
+
+
+Shows  crimes vs time of day, was initially interested in checking for 'popular' times of day for crime.
+
+noticed weird mid-day hump, decided t explore further.
+
+## slide 2
+
+Exploring further, found the hump is mostly (not all) identity theft, also spikes at midnight, presumably just a quirk of reporting.
+
+
+## slide 3
+
+Looking at the distribution of age and sex of victim, noticed a spike in 'unknown' sex between the ages of 19 and 22.
+
+## slide 4
+
+filtering down just to see crimes of unknown victim sex
+
+
+## Slide 5
+
+Looking further to see victim descent and type of crime. There's a few crimes that stand out (Theft, burglary, trespassing, vandalism). Also an overwhelming majority of 'unknown' victim descent.
+
+## Slide 6 
+
+Maps locations and types of crime (colour) on the left and locations and victim descent (by colour) on the right.
+
+This one shows an interesting geographic correlation among human trafficking crimes, a vast majority of which are correlated in one location. (use the select tool on a map to show the number selected).
+
+Crime by sex and victim descent as graphs to further breakdown map views, clicking different parts acts like a filter for all objects on the page.
+
+## Slide 7
+
+Map showing battery on fire and police officers, and assault with a deadly weapon on police officers, good demonstration on how the colour filters work for the dashboard, and ending page to play around with any other filter combinations from.
+
+not too strong a geographic correlation for police officers, a better grouping for firefights but also a far smaller sample size.
